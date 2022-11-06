@@ -23,13 +23,13 @@ function Homepage() {
     const registerNewUser = { name, surname, email, course, message };
 
     try {
-      await axios.post(
+      const { data } = await axios.post(
         `/api/v1/auth/register`,
         registerNewUser
       );
       setValues({ name: '', surname: '', email: '', message: '' });
     } catch (error) {
-      error.response.data;
+      const { msg } = error.response.data;
     }
   };
 
