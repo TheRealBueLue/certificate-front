@@ -61,7 +61,6 @@ function HomeCourse12() {
         Please be a little patient, it might take a few minutes.
       </h2>
       <form
-        className='form'
         onSubmit={onSubmit}
         className={isActive ? 'form' : 'hide'}
       >

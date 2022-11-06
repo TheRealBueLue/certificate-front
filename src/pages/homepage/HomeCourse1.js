@@ -23,13 +23,13 @@ function Homepage() {
     const registerNewUser = { name, surname, email, course, message };
 
     try {
-      const { data } = await axios.post(
+      await axios.post(
         `/api/v1/auth/register`,
         registerNewUser
       );
       setValues({ name: '', surname: '', email: '', message: '' });
     } catch (error) {
-      const { msg } = error.response.data;
+      error.response.data;
     }
   };
 
@@ -61,7 +61,6 @@ function Homepage() {
         Please be a little patient, it might take a few minutes.
       </h2>
       <form
-        className='form'
         onSubmit={onSubmit}
         className={isActive ? 'form' : 'hide'}
       >
